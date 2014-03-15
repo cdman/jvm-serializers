@@ -27,6 +27,7 @@ public class BenchmarkRunner extends MediaItemBenchmark
         new BenchmarkRunner().runBenchmark(args);
     }
 
+    @Override
     protected void addTests(TestGroups groups)
     {
         // Binary Formats; language-specific ones
@@ -117,6 +118,7 @@ public class BenchmarkRunner extends MediaItemBenchmark
         // Then binary XML; Fast Infoset, EXI
         XmlStax.register(groups, false, false, true); // -/-/fast-infoset
         ExiExificient.register(groups);
-
+        
+        Asn1.register(groups);
     }
 }
